@@ -23,7 +23,7 @@ func main() {
 		Luxury:      true,
 		BucketSeats: true,
 		Make:        "Volco",
-		Model:       "XC()",
+		Model:       "XC90",
 		Year:        2019,
 	}
 
