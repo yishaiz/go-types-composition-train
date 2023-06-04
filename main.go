@@ -8,14 +8,25 @@ import "fmt"
 
 // interface type
 
+type Car struct {
+	NumOfTires  int
+	Luxury      bool
+	BucketSeats bool
+	Make        string
+	Model       string
+	Year        int
+}
+
 func main() {
-	var myStrings [3]string
+	myCar := Car{
+		NumOfTires:  4,
+		Luxury:      true,
+		BucketSeats: true,
+		Make:        "Volco",
+		Model:       "XC()",
+		Year:        2019,
+	}
 
-	myStrings[0] = "cat"
-	myStrings[1] = "dog"
-	myStrings[2] = "fish"
+	fmt.Printf("My car is a %d %s %s", myCar.Year, myCar.Make, myCar.Model)
 
-	fmt.Println("First element in array is", myStrings[0])
-	fmt.Println("Second element in array is", myStrings[1])
-	fmt.Println("Third element in array is", myStrings[2])
 }
