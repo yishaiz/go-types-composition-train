@@ -2,31 +2,27 @@ package main
 
 import "fmt"
 
-// aggregate types (array, struct)
-
 // reference types (pointers, slices, maps, functions, channels)
 
 // interface type
 
-type Car struct {
-	NumOfTires  int
-	Luxury      bool
-	BucketSeats bool
-	Make        string
-	Model       string
-	Year        int
+func main() {
+	x := 10
+	myFirstPointer := &x
+
+	fmt.Println("x is", x)
+	fmt.Println("myFirstPointer is", myFirstPointer)
+	fmt.Println("myFirstPointer is", *myFirstPointer)
+
+	*myFirstPointer = 15
+
+	fmt.Println("x is now", x)
+	fmt.Println("myFirstPointer is now", *myFirstPointer)
+
+	changeValueOfPointer(&x)
+	fmt.Println("After function call, x is now", x)
 }
 
-func main() {
-	myCar := Car{
-		NumOfTires:  4,
-		Luxury:      true,
-		BucketSeats: true,
-		Make:        "Volco",
-		Model:       "XC90",
-		Year:        2019,
-	}
-
-	fmt.Printf("My car is a %d %s %s", myCar.Year, myCar.Make, myCar.Model)
-
+func changeValueOfPointer(num *int) {
+	*num = 25
 }
