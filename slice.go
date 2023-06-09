@@ -9,7 +9,7 @@ import (
 
 // interface type
 
-func main() {
+func slices() {
 	// var animals []string
 
 	animals := []string{}
