@@ -7,11 +7,26 @@ import "fmt"
 // interface type
 
 func main() {
-	z := addTwoNumbers(2, 4)
-	fmt.Println(z)
+	myTotal := sumMany(2, 3, 4, 5)
+	fmt.Println(myTotal)
 }
 
-func addTwoNumbers(x, y int) (sum int) {
-	sum = x + y
-	return
+func sumMany(nums ...int) int {
+	total := 0
+
+	for _, x := range nums {
+		total += x
+	}
+
+	return total
 }
+
+// func main() {
+// 	z := addTwoNumbers(2, 4)
+// 	fmt.Println(z)
+// }
+
+// func addTwoNumbers(x, y int) (sum int) {
+// 	sum = x + y
+// 	return
+// }
