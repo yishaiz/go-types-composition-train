@@ -6,24 +6,24 @@ import "fmt"
 
 // interface type
 
-type Animal struct {
+type Animal1 struct {
 	Name         string
 	Sound        string
 	NumberOfLegs int
 }
 
-func (a *Animal) Says() {
+func (a *Animal1) Says() {
 	fmt.Printf("A %s says %s", a.Name, a.Sound)
 	fmt.Println()
 }
 
-func (a *Animal) HowManyLegs() {
+func (a *Animal1) HowManyLegs() {
 	fmt.Printf("A %s has %d legs", a.Name, a.NumberOfLegs)
 	fmt.Println()
 }
 
 func main1() {
-	var dog Animal
+	var dog Animal1
 	dog.Name = "dog"
 	dog.Sound = "woof"
 	dog.NumberOfLegs = 4
@@ -31,7 +31,7 @@ func main1() {
 	dog.Says()
 	dog.HowManyLegs() 
 
-	cat := Animal{
+	cat := Animal1{
 		Name:         "cat",
 		Sound:        "meow",
 		NumberOfLegs: 4,
