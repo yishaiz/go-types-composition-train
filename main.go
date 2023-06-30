@@ -6,37 +6,40 @@ import "fmt"
 
 // interface type
 
-type Animal struct {
+type Dog struct {
 	Name         string
 	Sound        string
 	NumberOfLegs int
 }
 
-func (a *Animal) Says() {
-	fmt.Printf("A %s says %s", a.Name, a.Sound)
-	fmt.Println()
-}
-
-func (a *Animal) HowManyLegs() {
-	fmt.Printf("A %s has %d legs", a.Name, a.NumberOfLegs)
-	fmt.Println()
+type Cat struct {
+	Name         string
+	Sound        string
+	NumberOfLegs int
+	HasTail      bool
 }
 
 func main() {
-	var dog Animal
-	dog.Name = "dog"
-	dog.Sound = "woof"
-	dog.NumberOfLegs = 4
-
-	dog.Says()
-	dog.HowManyLegs() 
-
-	cat := Animal{
-		Name:         "cat",
-		Sound:        "meow",
+	dog := Dog{
+		Name:         "dog",
+		Sound:        "woof",
 		NumberOfLegs: 4,
 	}
 
-	cat.Says()
-	cat.HowManyLegs() 
+	Riddle(dog)
+
+	var cat Cat
+	cat.Name = "cat"
+	cat.NumberOfLegs = 4
+	cat.Sound = "meow"
+	cat.HasTail = true
+
+	Riddle(cat)
+
+}
+
+func Riddle(d Dog) {
+	riddle := fmt.Sprintf(`This animal says "%s" and has %d legs. What animal is it ?`, d.Sound, d.NumberOfLegs)
+
+	fmt.Print(riddle)
 }
