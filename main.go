@@ -6,27 +6,37 @@ import "fmt"
 
 // interface type
 
-func main() {
-	myTotal := sumMany(2, 3, 4, 5)
-	fmt.Println(myTotal)
+type Animal struct {
+	Name         string
+	Sound        string
+	NumberOfLegs int
 }
 
-func sumMany(nums ...int) int {
-	total := 0
+func (a *Animal) Says() {
+	fmt.Printf("A %s says %s", a.Name, a.Sound)
+	fmt.Println()
+}
 
-	for _, x := range nums {
-		total += x
+func (a *Animal) HowManyLegs() {
+	fmt.Printf("A %s has %d legs", a.Name, a.NumberOfLegs)
+	fmt.Println()
+}
+
+func main() {
+	var dog Animal
+	dog.Name = "dog"
+	dog.Sound = "woof"
+	dog.NumberOfLegs = 4
+
+	dog.Says()
+	dog.HowManyLegs() 
+
+	cat := Animal{
+		Name:         "cat",
+		Sound:        "meow",
+		NumberOfLegs: 4,
 	}
 
-	return total
+	cat.Says()
+	cat.HowManyLegs() 
 }
-
-// func main() {
-// 	z := addTwoNumbers(2, 4)
-// 	fmt.Println(z)
-// }
-
-// func addTwoNumbers(x, y int) (sum int) {
-// 	sum = x + y
-// 	return
-// }
