@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 
-type Car struct {
+type Car1 struct {
 	NumOfTires  int
 	Luxury      bool
 	BucketSeats bool
@@ -13,7 +13,7 @@ type Car struct {
 }
 
 func struct1() {
-	myCar := Car{
+	myCar := Car1{
 		NumOfTires:  4,
 		Luxury:      true,
 		BucketSeats: true,
